@@ -1,5 +1,7 @@
 package nit.rudi.views;
 
+import nit.rudi.helper.ReadExcel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,6 +53,7 @@ public class Home {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     selectedFile = fileChooser.getSelectedFile();
                     System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+                    ReadExcel exl = new ReadExcel(selectedFile);
                 }
                 switch (selectInputFile.getSelectedIndex()){
                     case 1:

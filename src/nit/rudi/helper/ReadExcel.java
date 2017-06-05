@@ -3,6 +3,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,10 +17,21 @@ public class ReadExcel {
 
     public ReadExcel(File inputFile)
     {
+        this.inputFile = inputFile;
         try {
 
             FileInputStream excelFile = new FileInputStream(this.inputFile);
             Workbook workbook = new XSSFWorkbook(excelFile);
+            if(inputFile.isFile() && inputFile.exists())
+            {
+                System.out.println(
+                        "openworkbook.xlsx file open successfully.");
+            }
+            else
+            {
+                System.out.println(
+                        "Error to open openworkbook.xlsx file.");
+            }
             Sheet datatypeSheet = workbook.getSheetAt(0);
             Iterator<Row> iterator = datatypeSheet.iterator();
 
