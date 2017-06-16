@@ -1,7 +1,12 @@
 package nit.rudi;
 import javax.swing.*;
 
+import nit.rudi.controller.SrankController;
+import nit.rudi.controller.SrankCoreProcess;
+
 import nit.rudi.views.Home;
+
+import java.io.IOException;
 
 public class Main {
     /**
@@ -12,7 +17,7 @@ public class Main {
      * */
     public static void main(String[] args) {
         ImageIcon img = new ImageIcon("~/Desktop/noshirvani.png");
-        JFrame frame = new JFrame("Calculator");
+        JFrame frame = new JFrame("Srank");
         frame.setIconImage(img.getImage());
         frame.setContentPane(new Home().homeView);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

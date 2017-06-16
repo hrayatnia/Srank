@@ -14,6 +14,7 @@ import java.util.Iterator;
 public class ReadExcel {
 
     private File inputFile;
+    private Iterator<Row> iterator;
 
     public ReadExcel(File inputFile)
     {
@@ -21,45 +22,44 @@ public class ReadExcel {
         try {
 
             FileInputStream excelFile = new FileInputStream(this.inputFile);
-            Workbook workbook = new XSSFWorkbook(excelFile);
+            String filename = this.inputFile.getName();
+            String extension = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
+            Workbook workbook =  new XSSFWorkbook(excelFile);
+
+//            if(extension.equals("xlsx")) {
+//                workbook = ;
+//            }else{
+//                System.out.println("Extension Error");
+//            }
+
             if(inputFile.isFile() && inputFile.exists())
             {
                 System.out.println(
-                        "openworkbook.xlsx file open successfully.");
+                        "Excel file open successfully.");
             }
             else
             {
                 System.out.println(
-                        "Error to open openworkbook.xlsx file.");
+                        "Error to open Excel file.");
             }
             Sheet datatypeSheet = workbook.getSheetAt(0);
             Iterator<Row> iterator = datatypeSheet.iterator();
+            this.iterator = iterator;
 
-            while (iterator.hasNext()) {
-
-                Row currentRow = iterator.next();
-                Iterator<Cell> cellIterator = currentRow.iterator();
-
-                while (cellIterator.hasNext()) {
-
-                    Cell currentCell = cellIterator.next();
-                    //getCellTypeEnum shown as deprecated for version 3.15
-                    //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
-                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
-                        System.out.print(currentCell.getStringCellValue() + "--");
-                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
-                        System.out.print(currentCell.getNumericCellValue() + "--");
-                    }
-
-                }
-                System.out.println();
-
-            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public Iterator<Row> getIterator() {
+        return iterator;
+    }
+
+    public void setIterator(Iterator<Row> iterator) {
+        this.iterator = iterator;
     }
 
 }

@@ -1,4 +1,5 @@
 package nit.rudi.models;
+
 import nit.rudi.helper.ExcelRowInterface;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -11,34 +12,17 @@ import java.util.Iterator;
 /**
  * Created by rayatnia on 2017-05-31.
  */
-public class University implements ExcelRowInterface{
-    private String id;
-    private String name;
-    private String grade;
+public class Minor implements ExcelRowInterface {
+    private String name ;
+    private String cap;
+    private ArrayList<String> req;
 
-    public University(){}
+    public Minor(){}
 
-    public University(String id,String name,String Grade){
-        this.id = id;
+    public Minor(String name, String cap, ArrayList<String> req) {
         this.name = name;
-        this.grade = Grade;
-    }
-    public ArrayList<Minor> getPrefList() {
-        return prefList;
-    }
-
-    public void setPrefList(ArrayList<Minor> prefList) {
-        this.prefList = prefList;
-    }
-
-    private ArrayList<Minor> prefList;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        this.cap = cap;
+        this.req = req;
     }
 
     public String getName() {
@@ -49,26 +33,39 @@ public class University implements ExcelRowInterface{
         this.name = name;
     }
 
-    public String getGrade() {
-        return grade;
+    public String getCap() {
+        return cap;
     }
 
-    public void setGrade(String grade) {
-        this.grade = grade;
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
+
+    public ArrayList<String> getReq() {
+        return req;
+    }
+
+    public void setReq(ArrayList<String> req) {
+        this.req = req;
+    }
+    public void setReq(String req) {
+        this.req = this.breakString(req);
     }
 
     @Override
     public void createRowFromModel(Row rowNo) {
-
-
+        return ;
     }
 
     @Override
     public String getValueForSrank() {
         String result = "";
-        result += "university\t"+this.getName()+"\n";
-        result += "university_grade\t"+this.getName()+"\t"+this.getGrade();
-        return result+"\n";
+        result += "minor\t"+this.getName()+"\n";
+        result += "minor_msc\t"+this.getName()+"\t"+this.getCap()+"\n";
+        for (String item :this.req){
+            result += "minor_req\t"+this.getName()+"\t"+item+"\n";
+        }
+        return result;
     }
 
     @Override
@@ -79,31 +76,36 @@ public class University implements ExcelRowInterface{
         while (cellIterator.hasNext()) {
             Cell currentCell = cellIterator.next();
             if (currentCell.getCellTypeEnum() == CellType.STRING) {
-                 v = this.setVal(currentCell.getStringCellValue(), cc);
+                v = this.setVal(currentCell.getStringCellValue(), cc);
             }else if (currentCell.getCellTypeEnum() == CellType.NUMERIC){
                 int val = (int) currentCell.getNumericCellValue();
-                 v = this.setVal(Integer.toString(val), cc);
+                v = this.setVal(Integer.toString(val), cc);
             }
             if (!v)
                 break;
             ++cc;
         }
+
+    }
+    private ArrayList<String> breakString(String val){
+        String[] words = val.split("\n",0);
+        ArrayList<String> output = new ArrayList<>();
+        for(String w:words){
+            output.add(w);
+        }
+        return output;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
     private boolean setVal(String val,int cc){
-        switch (cc){
+        switch(cc){
             case 0:
-                this.setId(val);
-                return true;
-            case 1:
                 this.setName(val);
                 return true;
+            case 1:
+                this.setReq(val);
+                return true;
             case 2:
-                this.setGrade(val);
+                this.setCap(val);
                 return true;
             default:
                 return false;
