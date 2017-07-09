@@ -6,14 +6,17 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by rayatnia on 2017-05-31.
  */
 public class SrankResult implements ExcelRowInterface {
     private String str;
+    private HashMap<Integer, String> headerIndex;
 
-    public SrankResult(){}
+    public SrankResult() {
+    }
 
     public String getStr() {
         return str;
@@ -27,15 +30,15 @@ public class SrankResult implements ExcelRowInterface {
     public void createRowFromModel(Row row) {
         int colNo = 0;
         ArrayList<String> result = this.breakString(this.str);
-        for(Object i:result){
-            this.setCell(row,colNo,i);
+        for (Object i : result) {
+            this.setCell(row, colNo, i);
             ++colNo;
         }
     }
 
     @Override
-    public void setRowToModel(Row row) {
-        return ;
+    public void setRowToModel(Row row,boolean is_primary) {
+        return;
     }
 
     @Override
@@ -44,19 +47,24 @@ public class SrankResult implements ExcelRowInterface {
     }
 
     @Override
-    public void setCell(Row row,int colNum,Object field) {
+    public void setCell(Row row, int colNum, Object field) {
         Cell cell = row.createCell(colNum);
         if (field instanceof String) {
             cell.setCellValue((String) field);
         }
     }
 
-    private ArrayList<String> breakString(String val){
-        String[] words = val.split("\t",0);
+    private ArrayList<String> breakString(String val) {
+        String[] words = val.split("\t", 0);
         ArrayList<String> output = new ArrayList<>();
-        for(String w:words){
+        for (String w : words) {
             output.add(w);
         }
         return output;
+    }
+
+    @Override
+    public void setHeaderIndex(HashMap<Integer, String> index) {
+        this.headerIndex = index;
     }
 }

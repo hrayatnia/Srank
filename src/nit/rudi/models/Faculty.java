@@ -5,12 +5,16 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by rayatnia on 2017-05-31.
  */
 public class Faculty implements ExcelRowInterface {
     private String id;
     private String name;
+    private HashMap<Integer,String> headerIndex;
     public String getId() {
         return id;
     }
@@ -28,7 +32,7 @@ public class Faculty implements ExcelRowInterface {
     }
 
     @Override
-    public void setRowToModel(Row row) {
+    public void setRowToModel(Row row,boolean is_primary) {
 
     }
 
@@ -53,5 +57,9 @@ public class Faculty implements ExcelRowInterface {
         if (field instanceof String) {
             cell.setCellValue((String) field);
         }
+    }
+    @Override
+    public void setHeaderIndex(HashMap<Integer,String> index){
+        this.headerIndex = index;
     }
 }

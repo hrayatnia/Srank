@@ -28,12 +28,18 @@ struct minor {
 	int reqs_cnt;		/* the number of items in reqs[] */
 };
 struct stud {
-	char name[NLEN];	/* student name */
+	char name[NLEN];	/* student id */
+	char info1[NLEN];	/* student first name */
+	char info2[NLEN];	/* student last name */
+	char bscuni_info[NLEN];	/* BSc university name */
 	int bsc;		/* BSc major name */
 	int bscgpa;		/* BSc GPA (0-2000) */
-	int bscuni;		/* BSc university */
+	int bscuni;		/* BSc university identifier */
 	int prefs[PCNT];	/* student preferences */
+	int prefs_rank[PCNT];	/* rank per preference */
+	int prefs_cap[PCNT];	/* capacity per preference */
 	int prefs_cnt;		/* number of items in prefs[] */
+	int score_univ;
 	int score;
 	int mapped;
 };
@@ -275,6 +281,14 @@ static void srank_input(FILE *fp)
 				stud_register(cols[1]);
 			else
 				warn("student <%s> redefined", cols[1]);
+		} else if (!strcmp("student_name", cmd) && cols[1]) {
+			struct stud *s = stud_find(cols[1]);
+			if (s && cols[2])
+				snprintf(s->info1, sizeof(s->info1), cols[2]);
+			if (s && cols[3])
+				snprintf(s->info2, sizeof(s->info2), cols[3]);
+			if (!s)
+				warn("unknown student <%s>", cols[1]);
 		} else if (!strcmp("student_bsc", cmd) && cols[1]) {
 			struct stud *s = stud_find(cols[1]);
 			if (s && cols[2])
@@ -290,6 +304,8 @@ static void srank_input(FILE *fp)
 		} else if (!strcmp("student_bscuni", cmd)) {
 			struct stud *s = stud_find(cols[1]);
 			if (s && cols[2])
+				snprintf(s->bscuni_info, sizeof(s->bscuni_info), cols[2]);
+			if (s && cols[2])
 				s->bscuni = sidx_uget(univs, cols[2]);
 			if (!s)
 				warn("unknown student <%s>", cols[1]);
@@ -300,7 +316,8 @@ static void srank_input(FILE *fp)
 				if (pref >= 0)
 					s->prefs[s->prefs_cnt++] = pref;
 				else
-					warn("unknown minor <%s>", cols[2]);
+					warn("unknown minor; student <%s>, minor <%s>",
+						cols[1], cols[2]);
 			}
 			if (!s)
 				warn("unknown student <%s>", cols[1]);
@@ -356,7 +373,8 @@ static void srank_scores(void)
 	for (i = 0; i < sidx_len(studs); i++) {
 		struct stud *st = sidx_datget(studs, i);
 		struct univ *un = sidx_datget(univs, st->bscuni);
-		st->score = st->bscgpa + (un ? un->grade : UDEF);
+		st->score_univ = un ? un->grade : UDEF;
+		st->score = st->bscgpa + st->score_univ;
 	}
 }
 
@@ -406,14 +424,17 @@ static void srank_rank(int noreq)
 				}
 			}
 			if (k == mi->reqs_cnt) {	/* unmet requirement */
-				warn("unmet requirement %s:%s", st->name, mi->name);
+				warn("unmet requirement; student <%s>, minor <%s>",
+					st->name, mi->name);
 				continue;
 			}
-			if (mi->msccnt >= mi->mscmax)	/* no room left */
-				continue;
 			mi->msccnt++;
-			st->mapped = st->prefs[j];
-			break;
+			st->prefs_rank[j] = mi->msccnt;
+			st->prefs_cap[j] = mi->mscmax;
+			if (mi->msccnt <= mi->mscmax) {	/* accepted */
+				st->mapped = st->prefs[j];
+				break;
+			}
 		}
 	}
 }
@@ -432,12 +453,42 @@ static void srank_print(FILE *fp)
 }
 
 /* print student grades */
-static void srank_printgrades(FILE *fp)
+static void srank_printfull(FILE *fp)
 {
-	int i;
+	int i, j;
+	printf("ID\tFirst Name\tLast Name\tBSc University\tUniversity Score\t"
+		"BSc GPA\tAccepted\t"
+		"Preference 1\tCapacity 1\tRank 1\t"
+		"Preference 2\tCapacity 2\tRank 2\t"
+		"Preference 3\tCapacity 3\tRank 3\n");
 	for (i = 0; i < sidx_len(studs); i++) {
 		struct stud *st = sidx_datget(studs, i);
-		fprintf(fp, "%s\t%d.%02d\n", st->name, st->score / 100, st->score % 100);
+		fprintf(fp, "%s", st->name);
+		fprintf(fp, "\t%s\t%s", st->info1, st->info2);
+		fprintf(fp, "\t%s", st->bscuni_info);
+		fprintf(fp, "\t%d.%02d", st->score_univ / 100, st->score_univ % 100);
+		fprintf(fp, "\t%d.%02d", st->bscgpa / 100, st->bscgpa % 100);
+		if (st->mapped >= 0) {
+			struct minor *mi = sidx_datget(minors, st->mapped);
+			fprintf(fp, "\t%s", mi->name);
+		} else {
+			fprintf(fp, "\t");
+		}
+		for (j = 0; j < PCNT; j++) {
+			struct minor *mi;
+			if (j < st->prefs_cnt && st->prefs[j] >= 0) {
+				mi = sidx_datget(minors, st->prefs[j]);
+				fprintf(fp, "\t%s", mi->name);
+			} else {
+				fprintf(fp, "\t-");
+			}
+			if (st->prefs_rank[j] > 0) {
+				fprintf(fp, "\t%d\t%d", st->prefs_cap[j], st->prefs_rank[j]);
+			} else {
+				fprintf(fp, "\t-\t-");
+			}
+		}
+		fprintf(fp, "\n");
 	}
 }
 
@@ -453,7 +504,7 @@ int main(int argc, char *argv[])
 {
 	FILE *ifp = NULL;
 	FILE *ofp = NULL;
-	int grades = 0;
+	int full = 0;
 	int noreq = 0;
 	int i;
 	for (i = 1; i < argc && argv[i][0] == '-'; i++) {
@@ -464,19 +515,19 @@ int main(int argc, char *argv[])
 		case 'o':
 			ofp = fopen(argv[i][2] ? argv[i] + 2 : argv[++i], "w");
 			break;
-		case 'g':
-			grades = 1;
-			break;
 		case 'n':
 			noreq = 1;
+			break;
+		case 'f':
+			full = 1;
 			break;
 		default:
 			printf("Usage: srank [options] <input >output\n\n");
 			printf("Options:\n");
 			printf("  -i path \t read from a file instead of standard input\n");
 			printf("  -o path \t write to a file instead of standard output\n");
-			printf("  -g      \t print student grades only\n");
 			printf("  -n      \t do not verify requirements\n");
+			printf("  -f      \t print full information\n");
 			return 1;
 		}
 	}
@@ -487,8 +538,8 @@ int main(int argc, char *argv[])
 	srank_input(ifp ? ifp : stdin);
 	srank_scores();
 	srank_rank(noreq);
-	if (grades)
-		srank_printgrades(ofp ? ofp : stdout);
+	if (full)
+		srank_printfull(ofp ? ofp : stdout);
 	else
 		srank_print(ofp ? ofp : stdout);
 	if (ifp)

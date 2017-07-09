@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -15,8 +16,14 @@ public class University implements ExcelRowInterface{
     private String id;
     private String name;
     private String grade;
+    private HashMap<Integer,String> headerIndex;
 
     public University(){}
+
+    @Override
+    public void setHeaderIndex(HashMap<Integer,String> index){
+        this.headerIndex = index;
+    }
 
     public University(String id,String name,String Grade){
         this.id = id;
@@ -72,7 +79,7 @@ public class University implements ExcelRowInterface{
     }
 
     @Override
-    public void setRowToModel(Row row) {
+    public void setRowToModel(Row row,boolean is_primary) {
         Iterator<Cell> cellIterator = row.iterator();
         int cc = 0;
         boolean v = true;
@@ -94,19 +101,23 @@ public class University implements ExcelRowInterface{
     public String toString() {
         return super.toString();
     }
+
     private boolean setVal(String val,int cc){
-        switch (cc){
-            case 0:
+        String attr = this.headerIndex.get(cc);
+        if(attr == null)
+            return true;
+        switch (attr){
+            case "id":
                 this.setId(val);
                 return true;
-            case 1:
+            case "name":
                 this.setName(val);
                 return true;
-            case 2:
+            case "grade":
                 this.setGrade(val);
                 return true;
             default:
-                return false;
+                return true;
         }
     }
 

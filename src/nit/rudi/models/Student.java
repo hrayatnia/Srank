@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -23,8 +24,13 @@ public class Student implements ExcelRowInterface{
     private String uni;
     // todo : we can use Minor class
     private ArrayList<String> pref;
+    private HashMap<Integer,String> headerIndex;
+    private boolean is_primary = true ;
 
-    public Student(){}
+
+    public Student(){
+        this.pref = new ArrayList<>();
+    }
 
     public Student(String faculty, String id, String name, String lastname, String grade, String uni, ArrayList<String> pref) {
         this.faculty = faculty;
@@ -95,8 +101,11 @@ public class Student implements ExcelRowInterface{
     public void setPref(ArrayList<String> pref) {
         this.pref = pref;
     }
+
     public void setPref(String pref) {
-        this.pref = this.breakString(pref);
+//        this.pref = this.breakString(pref);
+        System.out.println(pref);
+        this.pref.add(pref);
     }
 
     @Override
@@ -105,21 +114,38 @@ public class Student implements ExcelRowInterface{
     }
 
     @Override
-    public void setRowToModel(Row row) {
+    public void setRowToModel(Row row,boolean is_primary) {
+        this.is_primary = is_primary;
         Iterator<Cell> cellIterator = row.iterator();
         int cc = 0;
         boolean v = true;
         while(cellIterator.hasNext())
         {
-            Cell currentCell = cellIterator.next();
-            if (currentCell.getCellTypeEnum() == CellType.STRING) {
-                v = this.setVal(currentCell.getStringCellValue(), cc);
-            }else if (currentCell.getCellTypeEnum() == CellType.NUMERIC){
-                int val = (int) currentCell.getNumericCellValue();
-                v = this.setVal(Integer.toString(val), cc);
-            }
-            if (!v) {
-                break;
+            if (this.is_primary) {
+                Cell currentCell = cellIterator.next();
+                if (currentCell.getCellTypeEnum() == CellType.STRING) {
+                    v = this.setVal(currentCell.getStringCellValue(), cc);
+                } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
+                    float val = (float) currentCell.getNumericCellValue();
+                    v = this.setVal(Float.toString(val), cc);
+                }
+                if (!v) {
+                    break;
+                }
+            }else{
+                Cell currentCell = cellIterator.next();
+                String val = this.headerIndex.get(cc);
+                if (val == null){
+                    cc++;
+                    continue;
+                }
+
+                if (val.equals("preference")){
+                    System.out.print(cc);
+                    System.out.println(val);
+                    System.out.print(currentCell.getStringCellValue());
+                    this.setVal(currentCell.getStringCellValue(),cc);
+                }
             }
             cc++;
         }
@@ -130,53 +156,60 @@ public class Student implements ExcelRowInterface{
     public String getValueForSrank() {
         String result = "";
         result += "student\t"+this.getId()+"\n";
+        result += "student_name\t"+this.getId()+"\t"+this.getName()+"\t"+this.getLastname()+"\n";
         result+= "student_bsc\t"+this.getId()+"\t"+this.faculty+"\n";
         result+= "student_bscgpa\t"+this.getId()+"\t"+this.getGrade()+"\n";
         result+= "student_bscuni\t"+this.getId()+"\t"+this.uni+"\n";
-        for (String item:this.pref){
-            result+= "student_pref\t"+this.getId()+"\t"+item+"\n";
+        for (String item: this.pref){
+            result += "student_pref\t"+this.getId()+"\t"+item+"\n";
         }
         return result+"\n";
     }
 
-    private ArrayList<String> breakString(String val){
-        String[] words = val.split("\n",0);
-        ArrayList<String> output = new ArrayList<>();
-        for(String w:words){
-            output.add(w);
-        }
-        return output;
-    }
+//    private ArrayList<String> breakString(String val){
+//        String[] words = val.split("\n",0);
+//        ArrayList<String> output = new ArrayList<>();
+//        for(String w:words){
+//            output.add(w);
+//        }
+//        return output;
+//    }
+
     @Override
     public void createRowFromModel(Row rowNo) {
         //
     }
 
     private boolean setVal(String val,int cc){
-        switch(cc){
-            case 0:
+        String attr = this.headerIndex.get(cc);
+        if(attr == null)
+            return true;
+        switch(attr){
+            case "id":
                 this.setId(val);
                 return true;
-            case 1:
+            case "name":
                 this.setName(val);
                 return true;
-            case 2:
+            case "lastname":
                 this.setLastname(val);
                 return true;
-            case 3:
+            case "faculty":
                 this.setFaculty(val);
                 return true;
-            case 4:
+            case "university":
                 this.setUni(val);
                 return true;
-            case 5:
+            case "grade":
                 this.setGrade(val);
                 return true;
-            case 6:
+            case "preference":
+                if(this.is_primary)
+                    this.pref.clear();
                 this.setPref(val);
                 return true;
             default:
-                return false;
+                return true;
         }
     }
 
@@ -186,5 +219,9 @@ public class Student implements ExcelRowInterface{
         if (field instanceof String) {
             cell.setCellValue((String) field);
         }
+    }
+    @Override
+    public void setHeaderIndex(HashMap<Integer,String> index){
+        this.headerIndex = index;
     }
 }

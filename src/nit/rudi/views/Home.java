@@ -15,9 +15,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class Home {
+    /**
+     * Home class
+     * @since 0.0.1
+     * @author Amirhesam Rayatnia rayatnia@stu.nit.ac.ir
+     * <p style="color:gray">this class used for creating Swing UI that comminucate with srank core
+     * and show warn and error message.
+     * in addtion it use to multiplex input file to Data model
+     * </p>
+     * */
     public JPanel homeView;
     private JButton exportFileButton;
     private JComboBox selectInputFile;
@@ -26,6 +38,8 @@ public class Home {
     private JFileChooser fileChooser;
     private final SrankConvertor sc;
     private boolean flags[] = {false,false,false,false};
+    private HashMap<Integer,String> methods;
+    private HashMap<String,String[]> headers;
     SrankController srankControl;
 
     public SrankConvertor getSc() {
@@ -33,21 +47,36 @@ public class Home {
     }
 
     public Home() {
-        srankControl = new SrankController();
-        this.sc = new SrankConvertor();
-        fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+
+        this.methods = new HashMap<>();
+        this.headers = new HashMap<>();
+        this.headers.put("Student",new String[]{"id","name","lastname","grade","university","preference","faculty"});
+        this.headers.put("University",new String[]{"id","name","grade"});
+        this.headers.put("Major",new String[]{"name","capacity","requirement"});
+        this.headers.put("Faculty",new String[]{""});
+        this.methods.put(1,"Student");
+        this.methods.put(2,"University");
+        this.methods.put(3,"Major");
+        this.methods.put(4,"Faculty");
+
+        srankControl = new SrankController();//create srank Controller object controll and convert
+        this.sc = new SrankConvertor();//srank Convertor Object that convert srank output
+        fileChooser = new JFileChooser();//select input and output file
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));//set user dir as base dir
+        //todo: create ArrayList for adding input file
+        // and fix hardcode problem
         this.selectInputFile.addItem("هیچکدام");
         this.selectInputFile.addItem("لیست دانشجویان(درنهایت)");
         this.selectInputFile.addItem("لیست دانشگاه ها");
         this.selectInputFile.addItem("لیست رشته ها");
         this.selectInputFile.addItem("لیست گرایش ها(اختیاری)");
         this.homeView = new JPanel();
+        // append component to our home view
         homeView.add(selectInputFile);
         homeView.add(exportFileButton);
         homeView.add(clearAll);
         homeView.add(resultLabel);
-
+        //create output action listener
         exportFileButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -69,7 +98,11 @@ public class Home {
                 if (os.contains("Mac"))
                     try {
                         SrankCoreProcess scp =
-                                new SrankCoreProcess("Core/srank -i Core/input.txt -o Core/output.txt");
+                                new SrankCoreProcess("Core/srank -i Core/input.txt -o  Core/output.txt");
+                        String msg = scp.getLines();
+
+                        if(msg!="" || msg!=null)
+                            JOptionPane.showMessageDialog(null,msg,"warns",JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception ex){
                         System.out.print(ex.getMessage());
                     }
@@ -117,8 +150,14 @@ public class Home {
                 if (result == JFileChooser.APPROVE_OPTION) {
                      selectedFile = fileChooser.getSelectedFile();
                      ReadExcel exl = new ReadExcel(selectedFile);
-                     final Iterator<Row> rows = exl.getIterator();
-                     srankControl.setIterator(rows);
+                    Iterator<Row> row = exl.getIterator();
+                    ArrayList<Row> listOfRows = new ArrayList<Row>();
+                    while (row.hasNext()) {
+                        listOfRows.add(row.next());
+                    }
+
+                    final ListIterator<Row> rows = listOfRows.listIterator();
+                    srankControl.setIterator(rows);
                 }else{
                     JOptionPane.showMessageDialog(null,
                             "از بارگیری فایل صرف نظر کرده اید.",
@@ -127,27 +166,15 @@ public class Home {
                     return;
                 }
                 flags[3] = true;//todo:temp
-                switch (selectInputFile.getSelectedIndex()){
-                    case 1:
-                        flags[0] = true;
-                        srankControl.setModel("Student");
-                       break;
-                    case 2:
-                        flags[1] = true;
-                        srankControl.setModel("University");
-                        break;
-                    case 3:
-                        flags[2] = true;
-                        srankControl.setModel("Major");
-                        break;
-                    case 4:
-                        flags[3] = true;
-                        srankControl.setModel("Faculty");
-                        break;
-                    default:
-                        break;
-                }
-                srankControl.Convert();
+
+                int index = selectInputFile.getSelectedIndex();
+                String method = methods.get(index);
+                if(method!= null) {
+                    flags[index-1]=true;
+                    srankControl.setSelectedHeader(headers.get(method));
+                    srankControl.setModel(method);
+                    srankControl.Convert();
+                }else{}
             }
         });
         clearAll.addActionListener(new ActionListener() {

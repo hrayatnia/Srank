@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -16,6 +17,7 @@ public class Minor implements ExcelRowInterface {
     private String name ;
     private String cap;
     private ArrayList<String> req;
+    private HashMap<Integer,String> headerIndex;
 
     public Minor(){}
 
@@ -69,7 +71,7 @@ public class Minor implements ExcelRowInterface {
     }
 
     @Override
-    public void setRowToModel(Row row) {
+    public void setRowToModel(Row row,boolean is_primary) {
         Iterator<Cell> cellIterator = row.iterator();
         int cc = 0;
         boolean v = true;
@@ -97,14 +99,17 @@ public class Minor implements ExcelRowInterface {
     }
 
     private boolean setVal(String val,int cc){
-        switch(cc){
-            case 0:
+        String attr = this.headerIndex.get(cc);
+        if(attr == null)
+            return true;
+        switch(attr){
+            case "name":
                 this.setName(val);
                 return true;
-            case 1:
+            case "requirement":
                 this.setReq(val);
                 return true;
-            case 2:
+            case "capacity":
                 this.setCap(val);
                 return true;
             default:
@@ -118,5 +123,9 @@ public class Minor implements ExcelRowInterface {
         if (field instanceof String) {
             cell.setCellValue((String) field);
         }
+    }
+    @Override
+    public void setHeaderIndex(HashMap<Integer,String> index){
+        this.headerIndex = index;
     }
 }
