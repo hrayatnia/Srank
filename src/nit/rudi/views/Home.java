@@ -98,7 +98,7 @@ public class Home {
                 if (os.contains("Mac"))
                     try {
                         SrankCoreProcess scp =
-                                new SrankCoreProcess("Core/srank -i Core/input.txt -o  Core/output.txt");
+                                new SrankCoreProcess("Core/srank.exe -i Core/input.txt -o  Core/output.txt");
                         String msg = scp.getLines();
 
                         if(msg!="" || msg!=null)
