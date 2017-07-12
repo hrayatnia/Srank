@@ -1,0 +1,611 @@
+minor	Computer Science
+minor_msc	Computer Science	10
+minor_req	Computer Science	DataScience
+minor_req	Computer Science	Computer Science
+minor	physics
+minor_msc	physics	5
+minor_req	physics	Neuroscience
+minor	فوق جدید
+minor_msc	فوق جدید	2
+minor_req	فوق جدید	فوق قدیم
+minor	test
+minor_msc	test	3
+minor_req	test	testt
+university	noshirvani
+university_grade	noshirvani	4
+university	AmirKabir
+university_grade	AmirKabir	4
+university	Sharif
+university_grade	Sharif	4
+university	KNTU
+university_grade	KNTU	3
+university	IUST
+university_grade	IUST	4
+university	فوق خوب
+university_grade	فوق خوب	3
+student	2368.0
+student_name	2368.0	مهين	قاسمي عزين آبادي
+student_bsc	2368.0	مهندسي صنايع
+student_bscgpa	2368.0	16.67
+student_bscuni	2368.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2368.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	2368.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	2368.0	* مهندسي صنايع-سيستم هاي سلامت
+
+student	2370.0
+student_name	2370.0	حسين	احمدي
+student_bsc	2370.0	مهندسي برق- كنترل
+student_bscgpa	2370.0	16.53
+student_bscuni	2370.0	دانشگاه وليعصر (عج) رفسنجان
+student_pref	2370.0	* مهندسي برق- كنترل
+
+student	2373.0
+student_name	2373.0	هليا	غفاري
+student_bsc	2373.0	مهندسي عمران- عمران
+student_bscgpa	2373.0	16.26
+student_bscuni	2373.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2373.0	* مهندسي عمران -محيط زيست
+
+student	2375.0
+student_name	2375.0	پرستو	پورمقيم
+student_bsc	2375.0	مهندسي عمران
+student_bscgpa	2375.0	18.51
+student_bscuni	2375.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2375.0	* مهندسي عمران-سازه
+student_pref	2375.0	* مهندسي عمران - مهندسي زلزله
+student_pref	2375.0	* مهندسي عمران-راه و ترابري
+
+student	2376.0
+student_name	2376.0	سعيد	خاشعي
+student_bsc	2376.0	مهندسي مكانيك-ساخت وتوليد
+student_bscgpa	2376.0	17.17
+student_bscuni	2376.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2376.0	* مهندسي مكانيك -ساخت وتوليد
+student_pref	2376.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	2379.0
+student_name	2379.0	زينب	خواجه صالحاني
+student_bsc	2379.0	مهندسي مكانيك
+student_bscgpa	2379.0	17.22
+student_bscuni	2379.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2379.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	2379.0	* مهندسي مكانيك - طراحي كاربردي
+student_pref	2379.0	* مهندسي معماري كشتي-سازه كشتي
+
+student	2380.0
+student_name	2380.0	نيلوفر	نديم كبيري
+student_bsc	2380.0	مهندسي صنايع
+student_bscgpa	2380.0	17.34
+student_bscuni	2380.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2380.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	2380.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	2380.0	* مهندسي صنايع-سيستم هاي سلامت
+
+student	2381.0
+student_name	2381.0	محمدرضا	رودگري
+student_bsc	2381.0	مهندسي مواد-متالورژي صنعتي
+student_bscgpa	2381.0	16.9
+student_bscuni	2381.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2381.0	* مهندسي مواد-شناسائي و انتخاب مواد مهندسي
+
+student	2384.0
+student_name	2384.0	عليرضا	عزتي
+student_bsc	2384.0	مهندسي شيمي
+student_bscgpa	2384.0	17.34
+student_bscuni	2384.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2384.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2384.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	2384.0	* مهندسي شيمي- بيوتكنولوژي
+
+student	2387.0
+student_name	2387.0	عرفان	اكبري كفشگري
+student_bsc	2387.0	مهندسي مكانيك
+student_bscgpa	2387.0	16.36
+student_bscuni	2387.0	دانشگاه مازندران
+student_pref	2387.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	2387.0	* مهندسي مكانيك - طراحي كاربردي
+student_pref	2387.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	2390.0
+student_name	2390.0	حامد	عمويي اوجاكي
+student_bsc	2390.0	مهندسي شيمي
+student_bscgpa	2390.0	16.58
+student_bscuni	2390.0	دانشگاه مازندران
+student_pref	2390.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2390.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+student_pref	2390.0	* مهندسي شيمي- بيوتكنولوژي
+
+student	2391.0
+student_name	2391.0	الهه	خالقي نسب
+student_bsc	2391.0	مهندسي برق -قدرت
+student_bscgpa	2391.0	17.68
+student_bscuni	2391.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2391.0	* مهندسي برق-سيستم هاي قدرت
+student_pref	2391.0	* مهندسي برق-الكترونيك قدرت و ماشينهاي الكتريكي
+student_pref	2391.0	* مهندسي برق- كنترل
+
+student	2393.0
+student_name	2393.0	شيوا	عبداله زاده لداري
+student_bsc	2393.0	مهندسي برق -قدرت
+student_bscgpa	2393.0	17.58
+student_bscuni	2393.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2393.0	* مهندسي برق-سيستم هاي قدرت
+student_pref	2393.0	* مهندسي برق-الكترونيك قدرت و ماشينهاي الكتريكي
+student_pref	2393.0	* مهندسي برق- كنترل
+
+student	2398.0
+student_name	2398.0	فاطمه	عسكريان اميري
+student_bsc	2398.0	مهندسي صنايع
+student_bscgpa	2398.0	16.82
+student_bscuni	2398.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2398.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	2398.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	2398.0	* مهندسي صنايع-سيستم هاي سلامت
+
+student	2400.0
+student_name	2400.0	سيده عاطفه	يوسفي
+student_bsc	2400.0	مهندسي صنايع
+student_bscgpa	2400.0	16.69
+student_bscuni	2400.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2400.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	2400.0	* مهندسي صنايع-سيستم هاي سلامت
+student_pref	2400.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+
+student	2404.0
+student_name	2404.0	مهدي	شوقي
+student_bsc	2404.0	مهندسي مكانيك
+student_bscgpa	2404.0	17.72
+student_bscuni	2404.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2404.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	2404.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	2405.0
+student_name	2405.0	ميلاد	حسيني
+student_bsc	2405.0	مهندسي مكانيك
+student_bscgpa	2405.0	18.09
+student_bscuni	2405.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2405.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	2405.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	2410.0
+student_name	2410.0	زهرا	روحي
+student_bsc	2410.0	مهندسي برق- كنترل
+student_bscgpa	2410.0	17.26
+student_bscuni	2410.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2410.0	* مهندسي برق- كنترل
+
+student	2411.0
+student_name	2411.0	مهسا	مسعودي
+student_bsc	2411.0	مهندسي شيمي
+student_bscgpa	2411.0	17.3
+student_bscuni	2411.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2411.0	* مهندسي شيمي- بيوتكنولوژي
+student_pref	2411.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2411.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+
+student	2412.0
+student_name	2412.0	كاظم	رعيت دوست تلوكي
+student_bsc	2412.0	مهندسي شيمي
+student_bscgpa	2412.0	15.69
+student_bscuni	2412.0	دانشگاه مازندران
+student_pref	2412.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2412.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+student_pref	2412.0	* مهندسي شيمي- بيوتكنولوژي
+
+student	2415.0
+student_name	2415.0	مهدي	خليلي
+student_bsc	2415.0	مهندسي مكانيك -ساخت وتوليد
+student_bscgpa	2415.0	16.1
+student_bscuni	2415.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2415.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	2416.0
+student_name	2416.0	مرتضي	مشهدي مقدم
+student_bsc	2416.0	مهندسي شيمي
+student_bscgpa	2416.0	17.39
+student_bscuni	2416.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2416.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	2416.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2416.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+
+student	2422.0
+student_name	2422.0	امين	نقوي
+student_bsc	2422.0	مهندسي عمران- عمران
+student_bscgpa	2422.0	17.92
+student_bscuni	2422.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2422.0	* مهندسي عمران-آب و سازه هاي هيدروليكي
+student_pref	2422.0	* مهندسي عمران-راه و ترابري
+student_pref	2422.0	* مهندسي عمران - مهندسي زلزله
+
+student	2423.0
+student_name	2423.0	علي	رحماني
+student_bsc	2423.0	مهندسي عمران- عمران
+student_bscgpa	2423.0	17.46
+student_bscuni	2423.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2423.0	* مهندسي عمران-راه و ترابري
+student_pref	2423.0	* مهندسي عمران-آب و سازه هاي هيدروليكي
+student_pref	2423.0	* مهندسي عمران - مهندسي زلزله
+
+student	2424.0
+student_name	2424.0	زهرا	يزدانيان اميري
+student_bsc	2424.0	مهندسي كامپيوتر- سخت افزار
+student_bscgpa	2424.0	15.72
+student_bscuni	2424.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2424.0	* مهندسي كامپيوتر-معماري سيستم هاي كامپيوتري
+student_pref	2424.0	* مهندسي كامپيوتر- نرم افزار
+
+student	2425.0
+student_name	2425.0	عليرضا	زرهون
+student_bsc	2425.0	مهندسي مكانيك -ساخت وتوليد
+student_bscgpa	2425.0	18.88
+student_bscuni	2425.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2425.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	2426.0
+student_name	2426.0	سيده عطيه	موسوي نژاد سرحمامي
+student_bsc	2426.0	مهندسي شيمي
+student_bscgpa	2426.0	18.29
+student_bscuni	2426.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2426.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2426.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	2426.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+
+student	2432.0
+student_name	2432.0	سيد احمد	حسيني ندافي
+student_bsc	2432.0	مهندسي عمران
+student_bscgpa	2432.0	17.18
+student_bscuni	2432.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2432.0	* مهندسي عمران-سازه
+student_pref	2432.0	* مهندسي عمران - مهندسي زلزله
+student_pref	2432.0	* مهندسي عمران-سواحل، بنادر و سازه هاي دريائي
+
+student	2433.0
+student_name	2433.0	فائزه	رحماني پيچا
+student_bsc	2433.0	مهندسي شيمي
+student_bscgpa	2433.0	17.19
+student_bscuni	2433.0	دانشگاه مازندران
+student_pref	2433.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	2433.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	2433.0	* مهندسي شيمي- بيوتكنولوژي
+
+student	2435.0
+student_name	2435.0	ترانه	كرباسچي
+student_bsc	2435.0	مهندسي مكانيك -ساخت وتوليد
+student_bscgpa	2435.0	17.01
+student_bscuni	2435.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2435.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	2437.0
+student_name	2437.0	روشنك	عرب طاهري
+student_bsc	2437.0	مهندسي شيمي
+student_bscgpa	2437.0	18.31
+student_bscuni	2437.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2437.0	* مهندسي شيمي- بيوتكنولوژي
+student_pref	2437.0	* مهندسي شيمي-طراحي فرآيند
+
+student	2438.0
+student_name	2438.0	حامد	يزداني
+student_bsc	2438.0	مهندسي عمران- عمران
+student_bscgpa	2438.0	17.06
+student_bscuni	2438.0	دانشگاه علم و فناوري مازندران
+student_pref	2438.0	* مهندسي عمران-ژئوتكنيك
+student_pref	2438.0	* مهندسي عمران-راه و ترابري
+student_pref	2438.0	* مهندسي عمران -محيط زيست
+
+student	2440.0
+student_name	2440.0	زهرا	ادبي فيروزجاه
+student_bsc	2440.0	مهندسي صنايع
+student_bscgpa	2440.0	16.54
+student_bscuni	2440.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2440.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	2440.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	2440.0	* مهندسي صنايع-سيستم هاي سلامت
+
+student	2441.0
+student_name	2441.0	محمد	محسن سلطاني
+student_bsc	2441.0	مهندسي مكانيك
+student_bscgpa	2441.0	17.61
+student_bscuni	2441.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2441.0	* مهندسي مكانيك - تبديل انرژي
+
+student	2442.0
+student_name	2442.0	احسان	حسين نژاد علي آبادي
+student_bsc	2442.0	مهندسي مكانيك -ساخت وتوليد
+student_bscgpa	2442.0	17.48
+student_bscuni	2442.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	2442.0	* مهندسي مكانيك -ساخت وتوليد
+student_pref	2442.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	4932.0
+student_name	4932.0	رضا	محمدي
+student_bsc	4932.0	مهندسي برق-مخابرات
+student_bscgpa	4932.0	17.42
+student_bscuni	4932.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4932.0	* مهندسي برق-مخابرات ميدان و موج
+student_pref	4932.0	* مهندسي برق-مخابرات سيستم
+student_pref	4932.0	* مهندسي پزشكي-بيوالكتريك
+
+student	4933.0
+student_name	4933.0	سيد علي	ابراهيمي
+student_bsc	4933.0	مهندسي مكانيك -ساخت وتوليد
+student_bscgpa	4933.0	15.88
+student_bscuni	4933.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4933.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	4934.0
+student_name	4934.0	ساسان	فولادي
+student_bsc	4934.0	مهندسي كامپيوتر- سخت افزار
+student_bscgpa	4934.0	16.03
+student_bscuni	4934.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4934.0	* مهندسي كامپيوتر- نرم افزار
+student_pref	4934.0	* مهندسي كامپيوتر-معماري سيستم هاي كامپيوتري
+
+student	4935.0
+student_name	4935.0	بهاره	بابايي دراز
+student_bsc	4935.0	مهندسي برق- الكترونيك
+student_bscgpa	4935.0	18.1
+student_bscuni	4935.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4935.0	* مهندسي برق-سيستمهاي الكترونيك ديجيتال
+student_pref	4935.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4935.0	* مهندسي برق-مدارهاي مجتمع الكترونيك
+
+student	4937.0
+student_name	4937.0	كميل	علي منش
+student_bsc	4937.0	مهندسي برق -قدرت
+student_bscgpa	4937.0	17.19
+student_bscuni	4937.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4937.0	* مهندسي برق-الكترونيك قدرت و ماشينهاي الكتريكي
+
+student	4938.0
+student_name	4938.0	سحر	ارزماني
+student_bsc	4938.0	مهندسي كامپيوتر- نرم افزار
+student_bscgpa	4938.0	15.12
+student_bscuni	4938.0	دانشگاه بجنورد
+student_pref	4938.0	* مهندسي كامپيوتر- نرم افزار
+
+student	4939.0
+student_name	4939.0	زهره	نادري اسرمي
+student_bsc	4939.0	مهندسي برق- الكترونيك
+student_bscgpa	4939.0	17.1
+student_bscuni	4939.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4939.0	* مهندسي برق-سيستمهاي الكترونيك ديجيتال
+student_pref	4939.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4939.0	* مهندسي برق-مدارهاي مجتمع الكترونيك
+
+student	4941.0
+student_name	4941.0	مجتبي	نوروزي فرد
+student_bsc	4941.0	مهندسي برق- كنترل
+student_bscgpa	4941.0	16.97
+student_bscuni	4941.0	دانشگاه مهندسي فناوريهاي نوين قوچان
+student_pref	4941.0	* مهندسي برق- كنترل
+
+student	4942.0
+student_name	4942.0	سكينه	بخشنده رستمي
+student_bsc	4942.0	مهندسي شيمي
+student_bscgpa	4942.0	16.21
+student_bscuni	4942.0	دانشگاه مازندران
+student_pref	4942.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	4942.0	* مهندسي شيمي- بيوتكنولوژي
+student_pref	4942.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+
+student	4943.0
+student_name	4943.0	عباس	پروري
+student_bsc	4943.0	مهندسي عمران- عمران
+student_bscgpa	4943.0	16.75
+student_bscuni	4943.0	دانشگاه مازندران
+student_pref	4943.0	* مهندسي عمران-سازه
+student_pref	4943.0	* مهندسي عمران - مهندسي زلزله
+student_pref	4943.0	* مهندسي عمران-راه و ترابري
+
+student	4945.0
+student_name	4945.0	مصطفي	بيدي
+student_bsc	4945.0	مهندسي برق- كنترل
+student_bscgpa	4945.0	16.45
+student_bscuni	4945.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4945.0	* مهندسي برق- كنترل
+student_pref	4945.0	* مهندسي برق-الكترونيك قدرت و ماشينهاي الكتريكي
+
+student	4946.0
+student_name	4946.0	محمدمهدي	طالع زاري
+student_bsc	4946.0	مهندسي مكانيك
+student_bscgpa	4946.0	17.23
+student_bscuni	4946.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4946.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4946.0	* مهندسي مكانيك - طراحي كاربردي
+student_pref	4946.0	* مهندسي معماري كشتي-سازه كشتي
+
+student	4947.0
+student_name	4947.0	فاطمه	مختاري نژاد
+student_bsc	4947.0	مهندسي كامپيوتر- سخت افزار
+student_bscgpa	4947.0	16.22
+student_bscuni	4947.0	دانشگاه مازندران
+student_pref	4947.0	* مهندسي كامپيوتر- نرم افزار
+student_pref	4947.0	* مهندسي كامپيوتر-معماري سيستم هاي كامپيوتري
+
+student	4948.0
+student_name	4948.0	محمدمهدي	رمضاني
+student_bsc	4948.0	مهندسي عمران- عمران
+student_bscgpa	4948.0	16.3
+student_bscuni	4948.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4948.0	* مهندسي عمران -محيط زيست
+student_pref	4948.0	* مهندسي عمران-راه و ترابري
+student_pref	4948.0	* مهندسي عمران-آب و سازه هاي هيدروليكي
+
+student	4950.0
+student_name	4950.0	محمد	منصوري
+student_bsc	4950.0	مهندسي مكانيك
+student_bscgpa	4950.0	17.64
+student_bscuni	4950.0	دانشگاه مازندران
+student_pref	4950.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4950.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	4952.0
+student_name	4952.0	زهرا	حسين زاده بندبن
+student_bsc	4952.0	مهندسي صنايع
+student_bscgpa	4952.0	17.72
+student_bscuni	4952.0	دانشگاه گيلان
+student_pref	4952.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	4952.0	* مهندسي صنايع-بهينه سازي سيستم
+student_pref	4952.0	* مهندسي صنايع-سيستم هاي سلامت
+
+student	4953.0
+student_name	4953.0	علي	عسكريان اميري
+student_bsc	4953.0	مهندسي مكانيك
+student_bscgpa	4953.0	17.62
+student_bscuni	4953.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4953.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4953.0	* مهندسي مكانيك - طراحي كاربردي
+student_pref	4953.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	4954.0
+student_name	4954.0	فاطمه	رنجبر كاركمي
+student_bsc	4954.0	مهندسي شيمي
+student_bscgpa	4954.0	17.06
+student_bscuni	4954.0	دانشگاه علم و فناوري مازندران
+student_pref	4954.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	4954.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	4954.0	* مهندسي شيمي-ترموسينتيك و كاتاليست
+
+student	4955.0
+student_name	4955.0	سپيده	خان زاده كتي لته
+student_bsc	4955.0	مهندسي كامپيوتر- سخت افزار
+student_bscgpa	4955.0	15.73
+student_bscuni	4955.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4955.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4955.0	* مهندسي كامپيوتر- نرم افزار
+student_pref	4955.0	* مهندسي كامپيوتر-معماري سيستم هاي كامپيوتري
+
+student	4958.0
+student_name	4958.0	سولناز	ازنير
+student_bsc	4958.0	مهندسي عمران- عمران
+student_bscgpa	4958.0	17.68
+student_bscuni	4958.0	دانشگاه گلستان
+student_pref	4958.0	* مهندسي عمران-سازه
+
+student	4959.0
+student_name	4959.0	زليخا	ايستگلدي
+student_bsc	4959.0	مهندسي شيمي
+student_bscgpa	4959.0	16.79
+student_bscuni	4959.0	دانشگاه صنعتي سيرجان
+student_pref	4959.0	* مهندسي شيمي-طراحي فرآيند
+student_pref	4959.0	* مهندسي شيمي-فرآيندهاي جداسازي
+student_pref	4959.0	* مهندسي شيمي- بيوتكنولوژي
+
+student	4960.0
+student_name	4960.0	مطهره	اقالري
+student_bsc	4960.0	مهندسي برق-مخابرات
+student_bscgpa	4960.0	17.76
+student_bscuni	4960.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4960.0	* مهندسي برق-مخابرات سيستم
+student_pref	4960.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4960.0	* مهندسي برق-مخابرات ميدان و موج
+
+student	4961.0
+student_name	4961.0	حامد	رضانژاد درازكلا
+student_bsc	4961.0	مهندسي برق-مخابرات
+student_bscgpa	4961.0	18.17
+student_bscuni	4961.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4961.0	* مهندسي برق-مخابرات ميدان و موج
+student_pref	4961.0	* مهندسي برق-مخابرات سيستم
+student_pref	4961.0	* مهندسي پزشكي-بيوالكتريك
+
+student	4962.0
+student_name	4962.0	سيد عليرضا	مطهري كلارستاقي
+student_bsc	4962.0	مهندسي برق-مخابرات
+student_bscgpa	4962.0	18.45
+student_bscuni	4962.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4962.0	* مهندسي برق-مخابرات سيستم
+student_pref	4962.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4962.0	* مهندسي برق-مخابرات ميدان و موج
+
+student	4964.0
+student_name	4964.0	حسن	پوراصغر عزيزي
+student_bsc	4964.0	مهندسي برق-مخابرات
+student_bscgpa	4964.0	18.11
+student_bscuni	4964.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4964.0	* مهندسي برق-مخابرات سيستم
+student_pref	4964.0	* مهندسي برق-سيستمهاي الكترونيك ديجيتال
+student_pref	4964.0	* مهندسي برق-مخابرات ميدان و موج
+
+student	4965.0
+student_name	4965.0	رقيه	طالبي
+student_bsc	4965.0	مهندسي مكانيك
+student_bscgpa	4965.0	15.5
+student_bscuni	4965.0	دانشگاه مازندران
+student_pref	4965.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4965.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	4966.0
+student_name	4966.0	نرجس	جهان
+student_bsc	4966.0	مهندسي صنايع
+student_bscgpa	4966.0	17.74
+student_bscuni	4966.0	دانشگاه گيلان
+student_pref	4966.0	* مهندسي صنايع-سيستم هاي سلامت
+student_pref	4966.0	* مهندسي صنايع-لجستيك و زنجيره تامين
+student_pref	4966.0	* مهندسي صنايع-بهينه سازي سيستم
+
+student	4967.0
+student_name	4967.0	علي	تقي نيا
+student_bsc	4967.0	مهندسي عمران- عمران
+student_bscgpa	4967.0	16.49
+student_bscuni	4967.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4967.0	* مهندسي عمران-سازه
+student_pref	4967.0	* مهندسي عمران-ژئوتكنيك
+student_pref	4967.0	* مهندسي عمران -محيط زيست
+
+student	4968.0
+student_name	4968.0	محمد	دالوند
+student_bsc	4968.0	مهندسي عمران- عمران
+student_bscgpa	4968.0	16.85
+student_bscuni	4968.0	دانشگاه لرستان
+student_pref	4968.0	* مهندسي عمران-سازه
+
+student	4969.0
+student_name	4969.0	ساره	پاكدل پيك خوش
+student_bsc	4969.0	علوم مهندسي
+student_bscgpa	4969.0	17.4
+student_bscuni	4969.0	دانشگاه گيلان
+student_pref	4969.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4969.0	* مهندسي مكانيك - طراحي كاربردي
+student_pref	4969.0	* مهندسي مكانيك -ساخت وتوليد
+
+student	4970.0
+student_name	4970.0	فاطمه	صياميان
+student_bsc	4970.0	مهندسي مكانيك
+student_bscgpa	4970.0	15.88
+student_bscuni	4970.0	دانشگاه مازندران
+student_pref	4970.0	* مهندسي مكانيك - تبديل انرژي
+student_pref	4970.0	* مهندسي مكانيك - طراحي كاربردي
+
+student	4972.0
+student_name	4972.0	سيد راد	مرتضوي
+student_bsc	4972.0	مهندسي عمران- عمران
+student_bscgpa	4972.0	16.81
+student_bscuni	4972.0	دانشگاه لرستان
+student_pref	4972.0	* مهندسي عمران-سازه
+student_pref	4972.0	* مهندسي عمران - مهندسي زلزله
+student_pref	4972.0	* مهندسي عمران-راه و ترابري
+
+student	4973.0
+student_name	4973.0	محمد	براري
+student_bsc	4973.0	مهندسي شيمي
+student_bscgpa	4973.0	15.48
+student_bscuni	4973.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4973.0	* مهندسي شيمي-طراحي فرآيند
+
+student	4976.0
+student_name	4976.0	اميرحسين	اميني تبار درزي
+student_bsc	4976.0	مهندسي پزشكي-بيوالكتريك
+student_bscgpa	4976.0	16.92
+student_bscuni	4976.0	دانشگاه اصفهان
+student_pref	4976.0	* مهندسي برق-سيستمهاي الكترونيك ديجيتال
+student_pref	4976.0	* مهندسي پزشكي-بيوالكتريك
+student_pref	4976.0	* مهندسي برق-مدارهاي مجتمع الكترونيك
+
+student	4983.0
+student_name	4983.0	اميرمحمود	احرار
+student_bsc	4983.0	مهندسي كامپيوتر- نرم افزار
+student_bscgpa	4983.0	16.49
+student_bscuni	4983.0	دانشگاه صنعتي نوشيرواني بابل
+student_pref	4983.0	* مهندسي كامپيوتر- نرم افزار
+

@@ -284,9 +284,9 @@ static void srank_input(FILE *fp)
 		} else if (!strcmp("student_name", cmd) && cols[1]) {
 			struct stud *s = stud_find(cols[1]);
 			if (s && cols[2])
-				snprintf(s->info1, sizeof(s->info1), cols[2]);
+				snprintf(s->info1, sizeof(s->info1), "%s", cols[2]);
 			if (s && cols[3])
-				snprintf(s->info2, sizeof(s->info2), cols[3]);
+				snprintf(s->info2, sizeof(s->info2), "%s", cols[3]);
 			if (!s)
 				warn("unknown student <%s>", cols[1]);
 		} else if (!strcmp("student_bsc", cmd) && cols[1]) {
@@ -304,7 +304,7 @@ static void srank_input(FILE *fp)
 		} else if (!strcmp("student_bscuni", cmd)) {
 			struct stud *s = stud_find(cols[1]);
 			if (s && cols[2])
-				snprintf(s->bscuni_info, sizeof(s->bscuni_info), cols[2]);
+				snprintf(s->bscuni_info, sizeof(s->bscuni_info), "%s", cols[2]);
 			if (s && cols[2])
 				s->bscuni = sidx_uget(univs, cols[2]);
 			if (!s)
@@ -456,7 +456,7 @@ static void srank_print(FILE *fp)
 static void srank_printfull(FILE *fp)
 {
 	int i, j;
-	printf("ID\tFirst Name\tLast Name\tBSc University\tUniversity Score\t"
+	fprintf(fp, "ID\tFirst Name\tLast Name\tBSc University\tUniversity Score\t"
 		"BSc GPA\tAccepted\t"
 		"Preference 1\tCapacity 1\tRank 1\t"
 		"Preference 2\tCapacity 2\tRank 2\t"

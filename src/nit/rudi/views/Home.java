@@ -93,12 +93,12 @@ public class Home {
                     return;
                 }
 
-                String os = System.getProperty("os.name");
-                boolean answer = os.contains("Windows");
-                if (os.contains("Mac"))
                     try {
-                        SrankCoreProcess scp =
-                                new SrankCoreProcess("Core/srank -i Core/input.txt -o  Core/output.txt");
+                        SrankCoreProcess scp;
+                    if (isUnix())
+                        scp = new SrankCoreProcess("Core/srank -i Core/input.txt -o  Core/output.txt -f");
+                    else
+                        scp = new SrankCoreProcess("Core/srank.exe -i Core/input.txt -o  Core/output.txt -f");
                         String msg = scp.getLines();
 
                         if(msg!="" || msg!=null)
@@ -203,5 +203,12 @@ public class Home {
     {
         for(boolean b : this.flags) if(!b) return false;
         return true;
+    }
+
+    private boolean isUnix(){
+       String os = System.getProperty("os.name");
+       if (os.contains("Windows") || os.contains("windows"))
+           return false;
+       return true;
     }
 }
