@@ -50,7 +50,13 @@ public class Home {
 
         this.methods = new HashMap<>();
         this.headers = new HashMap<>();
-        this.headers.put("Student",new String[]{"id","name","lastname","grade","university","preference","faculty"});
+        this.headers.put("Student",new String[]{
+                "شماره پرونده داوطلب",
+                "گرايش (هاي) انتخابي",
+                "نام خانوادگي","نام",
+                "دانشگاه محل اخذ مدرك كارشناسي",
+                "رشته تحصيلي كارشناسي",
+                "معدل تا پايان نيمسال ششم"});
         this.headers.put("University",new String[]{"id","name","grade"});
         this.headers.put("Major",new String[]{"name","capacity","requirement"});
         this.headers.put("Faculty",new String[]{""});

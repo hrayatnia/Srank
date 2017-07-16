@@ -104,7 +104,6 @@ public class Student implements ExcelRowInterface{
 
     public void setPref(String pref) {
 //        this.pref = this.breakString(pref);
-        System.out.println(pref);
         this.pref.add(pref);
     }
 
@@ -140,10 +139,7 @@ public class Student implements ExcelRowInterface{
                     continue;
                 }
 
-                if (val.equals("preference")){
-                    System.out.print(cc);
-                    System.out.println(val);
-                    System.out.print(currentCell.getStringCellValue());
+                if (val.equals("گرايش (هاي) انتخابي")){
                     this.setVal(currentCell.getStringCellValue(),cc);
                 }
             }
@@ -185,25 +181,25 @@ public class Student implements ExcelRowInterface{
         if(attr == null)
             return true;
         switch(attr){
-            case "id":
+            case "شماره پرونده داوطلب":
                 this.setId(val);
                 return true;
-            case "name":
+            case "نام":
                 this.setName(val);
                 return true;
-            case "lastname":
+            case "نام خانوادگي":
                 this.setLastname(val);
                 return true;
-            case "faculty":
+            case "رشته تحصيلي كارشناسي":
                 this.setFaculty(val);
                 return true;
-            case "university":
+            case "دانشگاه محل اخذ مدرك كارشناسي":
                 this.setUni(val);
                 return true;
-            case "grade":
+            case "معدل تا پايان نيمسال ششم":
                 this.setGrade(val);
                 return true;
-            case "preference":
+            case "گرايش (هاي) انتخابي":
                 if(this.is_primary)
                     this.pref.clear();
                 this.setPref(val);
